@@ -5,6 +5,29 @@ int main()
 	int floor[10] = { 1,2,3,4,5,6,7,8,9,10 };
 	int A, B, C;
 	scanf("%d %d %d", &A, &B, &C);
+	int input[] = { A,B,C };
+	for (int i = 0; i < 3; i++)//检查输入楼层是否属于1到10
+	{
+		if (A < 1 || A > 10 || B < 1 || B > 10 || C < 1 || C > 10)
+		{
+			printf("输入数据有误\n");
+			return 0;
+		}
+	}
+	//曾想过用遍历数组方式来检查输入数据，后来发现楼层是连续的，没有这个必要
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	for (int j = 0; j < 9; j++)
+	//	{
+	//		if (floor[j] == input[i])
+	//			break;
+	//		else if (j == 9)
+	//		{
+	//			printf("输入数据有误");
+	//			return 0;
+	//		}
+	//	}
+	//}
 	printf("%d 0 0\n", C);//打印开始运行时状态
 	int i;
 	i = fabs(A - C);
